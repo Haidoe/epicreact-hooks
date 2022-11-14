@@ -4,8 +4,10 @@
 import * as React from 'react'
 
 function Greeting({initialName = ''}) {
-  initialName = window.localStorage.getItem('name') ?? initialName
-  const [name, setName] = React.useState(initialName)
+  //This will make the window.localStorage.getItem run only once in every re-render
+  const [name, setName] = React.useState(
+    () => window.localStorage.getItem('name') || initialName,
+  )
 
   function handleChange(event) {
     setName(event.target.value)
