@@ -5,20 +5,21 @@ import * as React from 'react'
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
-  const [squares, setSquares] = React.useState(Array(9).fill(null))
+  const squares = Array(9).fill(null)
+  // const [squares, setSquares] = React.useState(Array(9).fill(null))
 
-  const turns = squares.filter(item => Boolean(item))
+  // const turns = squares.filter(item => Boolean(item))
 
   // 🐨 We'll need the following bits of derived state:
 
   // - nextValue ('X' or 'O')
-  const nextValue = turns.length % 2 === 0 ? 'X' : 'O'
+  // const nextValue = turns.length % 2 === 0 ? 'X' : 'O'
 
   // - winner ('X', 'O', or null)
-  const winner = null
+  // const winner = null
 
   // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
-  const status = `Next player: ${nextValue}`
+  // const status = `Next player: ${nextValue}`
 
   // 💰 I've written the calculations for you! So you can use my utilities
   // below to create these variables
