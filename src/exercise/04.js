@@ -11,26 +11,6 @@ function Board() {
   const winner = calculateWinner(squares)
   const status = calculateStatus(winner, squares, nextValue)
 
-  // const [squares, setSquares] = React.useState(Array(9).fill(null))
-
-  // const turns = squares.filter(item => Boolean(item))
-
-  // 🐨 We'll need the following bits of derived state:
-
-  // - nextValue ('X' or 'O')
-  // const nextValue = turns.length % 2 === 0 ? 'X' : 'O'
-
-  // - winner ('X', 'O', or null)
-  // const winner = null
-
-  // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
-  // const status = `Next player: ${nextValue}`
-
-  // 💰 I've written the calculations for you! So you can use my utilities
-  // below to create these variables
-
-  // This is the function your square click handler will call. `square` should
-  // be an index. So if they click the center square, this will be `4`.
   function selectSquare(square) {
     if (winner || squares[square]) {
       return
@@ -42,8 +22,6 @@ function Board() {
   }
 
   function restart() {
-    // 🐨 reset the squares
-    // 💰 `Array(9).fill(null)` will do it!
     setSquares(Array(9).fill(null))
   }
 
@@ -57,23 +35,26 @@ function Board() {
 
   return (
     <div>
-      {/* 🐨 put the status in the div below */}
       <div className="status">STATUS : {status} </div>
+
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
+
       <div className="board-row">
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
       </div>
+
       <div className="board-row">
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+
       <button className="restart" onClick={restart}>
         restart
       </button>
